@@ -32,7 +32,9 @@ class GFColumns {
 
     public static function init() {
 
-        add_filter('gform_field_content', array('GFTrello', 'gform_column_splits'), 10, 5);
+        add_filter('gform_field_content', array('GFColumns', 'gform_column_splits'), 10, 5);
+
+       add_filter('gform_submit_button', array('GFColumns', 'form_submit_button'),10,2);
 
         self::frontend_css();
 
@@ -69,6 +71,12 @@ class GFColumns {
         return $content;
     }
 
+    public function form_submit_button($button,$form)
+    {
+    	return '<input type="submit" class="btn btn-large btn-success" id="gform_submit_button_' . $form['id'] . '" value="' . $form['button']['text'] . '">';
+    }
+
+
     /**
      * Add CSS in the frontend area
      *
@@ -77,3 +85,4 @@ class GFColumns {
 	{
 		wp_enqueue_style('gf-column-css', plugins_url( 'gf-column.css' , __FILE__ ));
 	}
+}

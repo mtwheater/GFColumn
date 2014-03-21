@@ -2,11 +2,44 @@
 	/*display: none;*/
 }
 .gform_wrapper.two-column_wrapper ul.gform_fields.gform_column {
-	display: block;
-	float: left;
+	display: inline-block;
+
 	width: 50%;
+        vertical-align: top;
 }
 .gform_wrapper.two-column_wrapper ul.gform_column li.gsection:first-child {
 	display: none;
 }
+.gform_wrapper.two-column_wrapper ul.gform_column li.gsection:last-child {
+	display: none;
+}
 
+.gform_column .ginput_container {
+	float:left;
+}
+
+.gform_column .ginput_container input {
+	width: 50px !important;
+	margin-right: 1em;
+	font-size: 15px !important;
+	text-align:center;
+}
+
+.ginput_container input, .ginput_container textarea {
+	font-size: 15px !important;
+}
+
+.gform_column .gsection {
+	font-size: 2em !important;
+	margin-top: 32px !important;
+}
+
+.gform_button {
+	height: 50px !important;
+	width: 100px !important;
+	font-size: 1.3em !important;
+}
+
+.gform_footer {
+	text-align:center;
+}
